@@ -40,8 +40,8 @@ namespace WordPressXmlExportParser.UnitTests
         public void CorrectlyParsesExportDate()
         {
             var blog = WordPressBlogExtractor.ExtractWordPressBlog(XElement.Parse(xml));
-
-            blog.ExportDate.Should().Be(new DateTime(2023,5,30,9,22,20));
+            
+            blog.ExportDate.Should().Be(new DateTime(2023,5,30,7,22,20,DateTimeKind.Utc).ToLocalTime());
         }
 
         [TestMethod]
