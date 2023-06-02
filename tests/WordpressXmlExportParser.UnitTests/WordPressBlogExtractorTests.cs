@@ -1,18 +1,9 @@
-﻿using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using WordPressXmlExportParser;
-
-namespace WordPressXmlExportParser.UnitTests
+﻿namespace WordPressXmlExportParser.UnitTests
 {
-    [TestClass]
+    [TestFixture]
     public class WordPressBlogExtractorTests
     {
-		[TestMethod]
+		[Test]
 		public void CorrectlyParsesTitle()
 		{
 			var blog = WordPressBlogExtractor.ExtractWordPressBlog(XElement.Parse(xml));
@@ -20,7 +11,7 @@ namespace WordPressXmlExportParser.UnitTests
 			blog.Title.Should().Be("Some Blog");
 		}
 
-		[TestMethod]
+		[Test]
 		public void CorrectlyParsesLink()
         {
             var blog = WordPressBlogExtractor.ExtractWordPressBlog(XElement.Parse(xml));
@@ -28,7 +19,7 @@ namespace WordPressXmlExportParser.UnitTests
 			blog.Link.Should().Be(new Uri("https://wordpressxmlexportparser.local"));
         }
 
-        [TestMethod]
+        [Test]
         public void CorrectlyParsesDescription()
         {
             var blog = WordPressBlogExtractor.ExtractWordPressBlog(XElement.Parse(xml));
@@ -36,7 +27,7 @@ namespace WordPressXmlExportParser.UnitTests
             blog.Description.Should().Be("Some blog description");
         }
 
-        [TestMethod]
+        [Test]
         public void CorrectlyParsesExportDate()
         {
             var blog = WordPressBlogExtractor.ExtractWordPressBlog(XElement.Parse(xml));
@@ -44,7 +35,7 @@ namespace WordPressXmlExportParser.UnitTests
             blog.ExportDate.Should().Be(new DateTime(2023,5,30,7,22,20,DateTimeKind.Utc).ToLocalTime());
         }
 
-        [TestMethod]
+        [Test]
         public void CorrectlyParsesLanguage()
         {
             var blog = WordPressBlogExtractor.ExtractWordPressBlog(XElement.Parse(xml));
@@ -52,7 +43,7 @@ namespace WordPressXmlExportParser.UnitTests
             blog.Language.Should().Be("en-US");
         }
 
-        [TestMethod]
+        [Test]
         public void CorrectlyParsesVersion()
         {
             var blog = WordPressBlogExtractor.ExtractWordPressBlog(XElement.Parse(xml));
@@ -60,7 +51,7 @@ namespace WordPressXmlExportParser.UnitTests
             blog.ExportVersion.Should().Be("1.2");
         }
 
-        [TestMethod]
+        [Test]
         public void CorrectlyParsesBaseSiteLink()
         {
             var blog = WordPressBlogExtractor.ExtractWordPressBlog(XElement.Parse(xml));
@@ -68,7 +59,7 @@ namespace WordPressXmlExportParser.UnitTests
             blog.BaseSiteUri.Should().Be(new Uri("https://wordpressxmlexportparser.local"));
         }
 
-        [TestMethod]
+        [Test]
         public void CorrectlyParsesBaseBlogLink()
         {
             var blog = WordPressBlogExtractor.ExtractWordPressBlog(XElement.Parse(xml));
