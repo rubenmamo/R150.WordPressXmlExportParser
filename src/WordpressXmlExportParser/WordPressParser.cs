@@ -33,6 +33,12 @@ namespace WordPressXmlExportParser
             using (var streamReader = new StreamReader(fileName))
             {
                 var xmlText = await streamReader.ReadToEndAsync();
+
+                if (cancellationToken.IsCancellationRequested)
+                {
+                    return null;
+                }
+
                 var document = XDocument.Parse(xmlText);
                 return doReadXml(document);
             }
