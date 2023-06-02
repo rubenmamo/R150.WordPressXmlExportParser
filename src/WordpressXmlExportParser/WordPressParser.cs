@@ -18,7 +18,7 @@ namespace WordPressXmlExportParser
             return ReadXml(document);
         }
 
-        public static Task<WordPressBlog> ReadFileAsync(string fileName, CancellationToken cancellationToken)
+        public static Task<WordPressBlog> ReadFileAsync(string fileName, CancellationToken cancellationToken = default(CancellationToken))
         {
             return doReadFileAsync(fileName, cancellationToken);
         }
@@ -28,7 +28,7 @@ namespace WordPressXmlExportParser
             return doReadXml(document);
         }
 
-        private static async Task<WordPressBlog> doReadFileAsync(string fileName, CancellationToken cancellationToken)
+        private static async Task<WordPressBlog> doReadFileAsync(string fileName, CancellationToken cancellationToken = default(CancellationToken))
         {
             using (var streamReader = new StreamReader(fileName))
             {

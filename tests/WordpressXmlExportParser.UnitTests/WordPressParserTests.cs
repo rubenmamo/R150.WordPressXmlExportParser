@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,6 +16,26 @@ namespace WordPressXmlExportParser.UnitTests
 			var blog = WordPressParser.ReadXml(XDocument.Parse(xml));
 
 			blog.Should().NotBeNull();
+        }
+
+        [Test]
+        public void ParsesFile()
+        {
+            var fileName = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\SampleExport.xml";
+
+            var blog = WordPressParser.ReadFile(fileName);
+            
+            blog.Should().NotBeNull();
+        }
+
+        [Test]
+        public async Task ParsesFileAsync()
+        {
+            var fileName = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\SampleExport.xml";
+
+            var blog = await WordPressParser.ReadFileAsync(fileName);
+
+            blog.Should().NotBeNull();
         }
 
         private string xml = @"<?xml version=""1.0"" encoding=""UTF-8"" ?>
