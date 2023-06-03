@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace WordPressXmlExportParser
 {
@@ -21,6 +22,6 @@ namespace WordPressXmlExportParser
 
         public Uri BaseBlogUri { get; internal set; }
 
-        public List<Category> Categories { get; internal set; } = new List<Category>();
+        public ReadOnlyCollection<Category> Categories { get; internal set; } = new ReadOnlyCollection<Category>(new List<Category>());
     }
 }
