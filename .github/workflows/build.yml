@@ -1,4 +1,4 @@
-name: SonarCloud
+name: BuildAndTest
 on:
   push:
     branches:
@@ -52,8 +52,8 @@ jobs:
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
           
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always() && github.actor != 'dependabot[bot]'
+        uses: EnricoMi/publish-unit-test-result-action/composite@v2
+        if: always()
         with:
           files: |
             **/*.trx
