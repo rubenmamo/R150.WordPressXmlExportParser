@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WordPressXmlExportParser
+﻿namespace WordPressXmlExportParser
 {
-    public struct Category
+	public class Category
     {
 		public int Id { get; set; }
 
