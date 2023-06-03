@@ -50,6 +50,7 @@ namespace WordPressXmlExportParser
             var channelElement = rootElement.Element("channel");
 
             var result = WordPressBlogExtractor.ExtractWordPressBlog(channelElement);
+            result.Categories = CategoryExtractor.ExtractCategories(channelElement);
 
             return result;
         }
