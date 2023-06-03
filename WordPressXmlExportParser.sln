@@ -11,7 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordPressXmlExportParser", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordPressXmlExportParser.UnitTests", "tests\WordpressXmlExportParser.UnitTests\WordPressXmlExportParser.UnitTests.csproj", "{0432709D-7BE1-4B40-AF07-F43C62FF7907}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordPressXmlExportParser.Console", "src\WordPressXmlExportParser.Console\WordPressXmlExportParser.Console.csproj", "{960535EA-7CA5-47BD-B193-EFF9D3496BBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordPressXmlExportParser.Console", "src\WordPressXmlExportParser.Console\WordPressXmlExportParser.Console.csproj", "{960535EA-7CA5-47BD-B193-EFF9D3496BBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{03E463BA-992C-4A7C-A686-9DA10AC81542}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
