@@ -1,19 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Xml.Linq;
 
 namespace WordPressXmlExportParser
 {
-    /*		<wp:category>
-		<wp:term_id>2</wp:term_id>
-		<wp:category_nicename><![CDATA[blogging]]></wp:category_nicename>
-		<wp:category_parent><![CDATA[]]></wp:category_parent>
-		<wp:cat_name><![CDATA[Blogging]]></wp:cat_name>
-	</wp:category>*/
-    internal class CategoryExtractor
+    internal static class CategoryExtractor
     {
         internal static ReadOnlyCollection<Category> ExtractCategories(XElement channelElement)
         {
