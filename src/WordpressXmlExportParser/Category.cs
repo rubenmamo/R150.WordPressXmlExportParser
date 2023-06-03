@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WordPressXmlExportParser
 {
-    public class Category
+    public struct Category
     {
 		public int Id { get; set; }
 
