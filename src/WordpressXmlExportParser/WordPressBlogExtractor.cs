@@ -17,8 +17,9 @@ namespace WordPressXmlExportParser
             var exportDateElement = channelElement.Element("pubDate");
             var languageElement = channelElement.Element("language");
             var versionElement = channelElement.Element(versionElementName);
-            var baseSiteUrl = channelElement.Element(siteUrlElementName);
-            var baseBlogUrl = channelElement.Element(blogUrlElementName);
+            var baseSiteUrlElement = channelElement.Element(siteUrlElementName);
+            var baseBlogUrlElement = channelElement.Element(blogUrlElementName);
+            var generatorElement = channelElement.Element("generator");
 
             var result = new WordPressBlog
             {
@@ -36,13 +37,17 @@ namespace WordPressXmlExportParser
             {
                 result.ExportDate = exportDate;
             }
-            if (Uri.IsWellFormedUriString(baseSiteUrl.Value, UriKind.RelativeOrAbsolute))
+            if (Uri.IsWellFormedUriString(baseSiteUrlElement.Value, UriKind.RelativeOrAbsolute))
             {
-                result.BaseSiteUri = new Uri(baseSiteUrl.Value);
+                result.BaseSiteUri = new Uri(baseSiteUrlElement.Value);
             }
-            if (Uri.IsWellFormedUriString(baseBlogUrl.Value, UriKind.RelativeOrAbsolute))
+            if (Uri.IsWellFormedUriString(baseBlogUrlElement.Value, UriKind.RelativeOrAbsolute))
             {
-                result.BaseBlogUri = new Uri(baseBlogUrl.Value);
+                result.BaseBlogUri = new Uri(baseBlogUrlElement.Value);
+            }
+            if (Uri.IsWellFormedUriString(generatorElement.Value, UriKind.RelativeOrAbsolute))
+            {
+                result.Generator = new Uri(generatorElement.Value);
             }
 
             return result;
