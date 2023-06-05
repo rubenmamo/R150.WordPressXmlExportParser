@@ -31,5 +31,7 @@ namespace WordPressXmlExportParser
         public ReadOnlyCollection<Tag> Tags { get; internal set; } = new ReadOnlyCollection<Tag>(new List<Tag>());
 
         public ReadOnlyCollection<Attachment> Attachments { get; internal set; } = new ReadOnlyCollection<Attachment>(new List<Attachment>());
+
+        public ReadOnlyCollection<Page> Pages { get; internal set; } = new ReadOnlyCollection<Page>(new List<Page>());
     }
 }
