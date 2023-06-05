@@ -57,5 +57,19 @@
       <wp:tag_slug><![CDATA[android]]></wp:tag_slug>
       <wp:tag_name><![CDATA[Android]]></wp:tag_name>
     </wp:tag>
+    <item>
+      <wp:post_id>38</wp:post_id>
+      <title><![CDATA[Some Image Title]]></title>
+      <wp:attachment_url>https://site.com/image.png</wp:attachment_url>
+      <pubDate>Tue, 13 Nov 2018 22:55:32 +0000</pubDate>
+      <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    </item>
+    <item>
+      <wp:post_id>39</wp:post_id>
+      <title><![CDATA[Some Other Image]]></title>
+      <wp:attachment_url>https://site.com/otherImage.png</wp:attachment_url>
+      <pubDate>Tue, 13 Nov 2018 23:55:32 +0000</pubDate>
+      <wp:post_type><![CDATA[attachment]]></wp:post_type>
+    </item>
   </channel>
 </rss>
