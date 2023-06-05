@@ -29,23 +29,23 @@ namespace WordPressXmlExportParser
                 ExportVersion = versionElement.Value
             };
 
-            if (Uri.IsWellFormedUriString(linkElement.Value, UriKind.RelativeOrAbsolute))
+            if (linkElement != null && Uri.IsWellFormedUriString(linkElement.Value, UriKind.RelativeOrAbsolute))
             {
                 result.Link = new Uri(linkElement.Value);
             }
-            if (DateTime.TryParse(exportDateElement.Value, out DateTime exportDate))
+            if (exportDateElement != null && DateTime.TryParse(exportDateElement.Value, out DateTime exportDate))
             {
                 result.ExportDate = exportDate;
             }
-            if (Uri.IsWellFormedUriString(baseSiteUrlElement.Value, UriKind.RelativeOrAbsolute))
+            if (baseSiteUrlElement != null && Uri.IsWellFormedUriString(baseSiteUrlElement.Value, UriKind.RelativeOrAbsolute))
             {
                 result.BaseSiteUri = new Uri(baseSiteUrlElement.Value);
             }
-            if (Uri.IsWellFormedUriString(baseBlogUrlElement.Value, UriKind.RelativeOrAbsolute))
+            if (baseBlogUrlElement != null && Uri.IsWellFormedUriString(baseBlogUrlElement.Value, UriKind.RelativeOrAbsolute))
             {
                 result.BaseBlogUri = new Uri(baseBlogUrlElement.Value);
             }
-            if (Uri.IsWellFormedUriString(generatorElement.Value, UriKind.RelativeOrAbsolute))
+            if (generatorElement != null && Uri.IsWellFormedUriString(generatorElement.Value, UriKind.RelativeOrAbsolute))
             {
                 result.Generator = new Uri(generatorElement.Value);
             }
