@@ -47,7 +47,7 @@
             categories[1].Name.Should().Be("How to's");
         }
 
-        private string xml = @"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+        private readonly string xml = @"<?xml version=""1.0"" encoding=""UTF-8"" ?>
 <channel
 	xmlns:excerpt=""http://wordpress.org/export/1.2/excerpt/""
 	xmlns:content=""http://purl.org/rss/1.0/modules/content/""

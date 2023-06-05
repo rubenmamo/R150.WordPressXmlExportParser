@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WordPressXmlExportParser.UnitTests
+﻿namespace WordPressXmlExportParser.UnitTests
 {
     internal class AuthorExtractorTests
     {
@@ -70,7 +64,7 @@ namespace WordPressXmlExportParser.UnitTests
             authors[1].LastName.Should().Be("User");
         }
 
-        private string xml = @"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+        private readonly string xml = @"<?xml version=""1.0"" encoding=""UTF-8"" ?>
 <channel
 	xmlns:excerpt=""http://wordpress.org/export/1.2/excerpt/""
 	xmlns:content=""http://purl.org/rss/1.0/modules/content/""

@@ -53,9 +53,10 @@ namespace WordPressXmlExportParser.UnitTests
             blog.Authors.Count.Should().Be(2);
             blog.Categories.Count.Should().Be(2);
             blog.Tags.Count.Should().Be(2);
+            blog.Attachments.Count.Should().Be(2);
         }
 
-        private string xml = @"<?xml version=""1.0"" encoding=""UTF-8"" ?>
+        private readonly string xml = @"<?xml version=""1.0"" encoding=""UTF-8"" ?>
 <rss
 	xmlns:excerpt=""http://wordpress.org/export/1.2/excerpt/""
 	xmlns:content=""http://purl.org/rss/1.0/modules/content/""

@@ -29,5 +29,7 @@ namespace WordPressXmlExportParser
         public ReadOnlyCollection<Author> Authors { get; internal set; } = new ReadOnlyCollection<Author>(new List<Author>());
 
         public ReadOnlyCollection<Tag> Tags { get; internal set; } = new ReadOnlyCollection<Tag>(new List<Tag>());
+
+        public ReadOnlyCollection<Attachment> Attachments { get; internal set; } = new ReadOnlyCollection<Attachment>(new List<Attachment>());
     }
 }

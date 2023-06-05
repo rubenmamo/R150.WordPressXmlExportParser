@@ -5,6 +5,8 @@ var fileName = @"C:\Users\rubenmamo\Downloads\rubenmamo.WordPress.2023-05-30.xml
 
 var blog = WordPressParser.ReadFile(fileName);
 
+
+Console.WriteLine("Blog Details");
 Console.WriteLine($"Title: {blog.Title}");
 Console.WriteLine($"Link: {blog.Link}");
 Console.WriteLine($"Description: {blog.Description}");
@@ -15,4 +17,34 @@ Console.WriteLine($"Export Version: {blog.ExportVersion}");
 Console.WriteLine($"Base Site Uri: {blog.BaseSiteUri}");
 Console.WriteLine($"Base Blog Uri: {blog.BaseBlogUri}");
 
+Console.ReadKey(); 
+Console.WriteLine();
+Console.WriteLine("Authors:");
+foreach (var author in blog.Authors)
+{
+    Console.WriteLine($"{author.DisplayName} [{author.UserName}]");
+}
+
 Console.ReadKey();
+Console.WriteLine();
+Console.WriteLine("Categories:");
+foreach (var category in blog.Categories)
+{
+    Console.WriteLine($"{category.Name} [{category.NiceName}]");
+}
+
+Console.ReadKey();
+Console.WriteLine();
+Console.WriteLine("Tags:");
+foreach (var tag in blog.Tags)
+{
+    Console.WriteLine($"{tag.Name} [{tag.Slug}]");
+}
+
+Console.ReadKey();
+Console.WriteLine();
+Console.WriteLine("Attachments:");
+foreach (var attachment in blog.Attachments)
+{
+    Console.WriteLine($"{attachment.Title} [{attachment.AttachmentUri}]");
+}
