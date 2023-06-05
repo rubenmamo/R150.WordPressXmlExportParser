@@ -1,6 +1,6 @@
 ﻿using WordPressXmlExportParser.Extractors;
 
-namespace WordPressXmlExportParser.UnitTests
+namespace WordPressXmlExportParser.UnitTests.Extractors
 {
     internal class AuthorExtractorTests
     {

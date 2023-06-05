@@ -1,6 +1,6 @@
 ﻿using WordPressXmlExportParser.Extractors;
 
-namespace WordPressXmlExportParser.UnitTests
+namespace WordPressXmlExportParser.UnitTests.Extractors
 {
     [TestFixture]
     public class ItemExtractorTests
@@ -244,8 +244,8 @@ namespace WordPressXmlExportParser.UnitTests
             var blog = new WordPressBlog();
             ItemExtractor.ExtractItemsAndAddToBlog(XElement.Parse(postsXml), blog);
 
-            blog.Posts[0].UploadDate.Should().Be(new DateTime(2018, 11, 2, 15, 37, 53, DateTimeKind.Utc).ToLocalTime());
-            blog.Posts[1].UploadDate.Should().Be(new DateTime(2018, 11, 13, 23, 24, 8, DateTimeKind.Utc).ToLocalTime());
+            blog.Posts[0].UploadDate.Should().Be(new DateTime(2018, 11, 2, 16, 37, 53, DateTimeKind.Local).ToLocalTime());
+            blog.Posts[1].UploadDate.Should().Be(new DateTime(2018, 11, 14, 0, 24, 8, DateTimeKind.Local).ToLocalTime());
         }
 
         [Test]

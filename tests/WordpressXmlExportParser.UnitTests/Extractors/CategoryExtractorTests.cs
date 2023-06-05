@@ -1,20 +1,20 @@
 ﻿using WordPressXmlExportParser.Extractors;
 
-namespace WordPressXmlExportParser.UnitTests
+namespace WordPressXmlExportParser.UnitTests.Extractors
 {
     [TestFixture]
     public class CategoryExtractorTests
     {
-		[Test]
-		public void ExtractsCorrectAmountOfCategories()
-		{
+        [Test]
+        public void ExtractsCorrectAmountOfCategories()
+        {
             var categories = CategoryExtractor.ExtractCategories(XElement.Parse(xml));
 
             categories.Count.Should().Be(2);
         }
 
-		[Test]
-		public void CorrectlyExtractsTermId()
+        [Test]
+        public void CorrectlyExtractsTermId()
         {
             var categories = CategoryExtractor.ExtractCategories(XElement.Parse(xml));
 
