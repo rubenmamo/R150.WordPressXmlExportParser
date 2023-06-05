@@ -6,6 +6,11 @@ namespace WordPressXmlExportParser
 {
     internal static class CategoryExtractor
     {
+        private static readonly XName idElementName = WordPressParser.WordPressXmlNamespace + "term_id";
+        private static readonly XName niceNameElementName = WordPressParser.WordPressXmlNamespace + "category_nicename";
+        private static readonly XName parentCategoryElementName = WordPressParser.WordPressXmlNamespace + "category_parent";
+        private static readonly XName categorElementName = WordPressParser.WordPressXmlNamespace + "cat_name";
+
         internal static ReadOnlyCollection<Category> ExtractCategories(XElement channelElement)
         {
             return new ReadOnlyCollection<Category>(channelElement
@@ -16,10 +21,10 @@ namespace WordPressXmlExportParser
 
         private static Category ExtractCategory(XElement categoryElement)
         {
-            var termIdElement = categoryElement.Element(WordPressParser.WordPressXmlNamespace + "term_id");
-            var niceNameElement = categoryElement.Element(WordPressParser.WordPressXmlNamespace + "category_nicename");
-            var parentCategoryElement = categoryElement.Element(WordPressParser.WordPressXmlNamespace + "category_parent");
-            var nameElement = categoryElement.Element(WordPressParser.WordPressXmlNamespace + "cat_name");
+            var termIdElement = categoryElement.Element(idElementName);
+            var niceNameElement = categoryElement.Element(niceNameElementName);
+            var parentCategoryElement = categoryElement.Element(parentCategoryElementName);
+            var nameElement = categoryElement.Element(categorElementName);
 
             return new Category 
             { 

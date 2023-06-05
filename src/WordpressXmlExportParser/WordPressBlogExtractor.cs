@@ -5,6 +5,10 @@ namespace WordPressXmlExportParser
 {
     internal static class WordPressBlogExtractor
     {
+        private static readonly XName versionElementName = WordPressParser.WordPressXmlNamespace + "wxr_version";
+        private static readonly XName siteUrlElementName = WordPressParser.WordPressXmlNamespace + "base_site_url";
+        private static readonly XName blogUrlElementName = WordPressParser.WordPressXmlNamespace + "base_blog_url";
+
         internal static WordPressBlog ExtractWordPressBlog(XElement channelElement)
         {
             var blogTitleElement = channelElement.Element("title");
@@ -12,9 +16,9 @@ namespace WordPressXmlExportParser
             var descriptionElement = channelElement.Element("description");
             var exportDateElement = channelElement.Element("pubDate");
             var languageElement = channelElement.Element("language");
-            var versionElement = channelElement.Element(WordPressParser.WordPressXmlNamespace + "wxr_version");
-            var baseSiteUrl = channelElement.Element(WordPressParser.WordPressXmlNamespace + "base_site_url");
-            var baseBlogUrl = channelElement.Element(WordPressParser.WordPressXmlNamespace + "base_blog_url");
+            var versionElement = channelElement.Element(versionElementName);
+            var baseSiteUrl = channelElement.Element(siteUrlElementName);
+            var baseBlogUrl = channelElement.Element(blogUrlElementName);
 
             var result = new WordPressBlog
             {
