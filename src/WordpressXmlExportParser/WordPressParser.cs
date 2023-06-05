@@ -8,6 +8,8 @@ namespace WordPressXmlExportParser
     public static class WordPressParser
     {
         internal static readonly XNamespace WordPressXmlNamespace = "http://wordpress.org/export/1.2/";
+        internal static readonly XNamespace ContentXmlNamespace = "http://purl.org/rss/1.0/modules/content/";
+        internal static readonly XNamespace DcXmlNamespace = "http://purl.org/dc/elements/1.1/";
 
         public static WordPressBlog ReadFile(string fileName)
         {
