@@ -52,6 +52,7 @@ namespace WordPressXmlExportParser
             var result = WordPressBlogExtractor.ExtractWordPressBlog(channelElement);
             result.Categories = CategoryExtractor.ExtractCategories(channelElement);
             result.Authors = AuthorExtractor.ExtractAuthors(channelElement);
+            result.Tags = TagExtractor.ExtractTags(channelElement);
 
             return result;
         }
