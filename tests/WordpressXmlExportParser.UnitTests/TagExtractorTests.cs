@@ -1,4 +1,6 @@
-﻿namespace WordPressXmlExportParser.UnitTests
+﻿using WordPressXmlExportParser.Extractors;
+
+namespace WordPressXmlExportParser.UnitTests
 {
     [TestFixture]
     public class TagExtractorTests

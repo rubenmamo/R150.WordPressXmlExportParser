@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Xml.Linq;
 
-namespace WordPressXmlExportParser
+namespace WordPressXmlExportParser.Extractors
 {
     internal static class TagExtractor
     {

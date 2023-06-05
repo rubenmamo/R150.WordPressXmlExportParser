@@ -2,10 +2,10 @@
 {
     public struct Tag
     {
-        public int Id { get; set; }
+        public int Id { get; internal set; }
 
-        public string Slug { get; set; }
+        public string Slug { get; internal set; }
 
-        public string Name { get; set; }
+        public string Name { get; internal set; }
     }
 }

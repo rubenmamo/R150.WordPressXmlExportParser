@@ -48,3 +48,18 @@ foreach (var attachment in blog.Attachments)
 {
     Console.WriteLine($"{attachment.Title} [{attachment.AttachmentUri}]");
 }
+
+Console.ReadKey();
+Console.WriteLine();
+Console.WriteLine("Pages:");
+foreach (var page in blog.Pages)
+{
+    Console.WriteLine($"{page.Title} [{page.Slug}] created by {page.Author.DisplayName} on {page.UploadDate.ToLongDateString()}");
+}
+Console.ReadKey();
+Console.WriteLine();
+Console.WriteLine("Posts:");
+foreach (var post in blog.Posts)
+{
+    Console.WriteLine($"{post.Title} [{post.Slug}] created by {post.Author.DisplayName} on {post.UploadDate.ToLongDateString()}");
+}

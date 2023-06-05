@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Xml.Linq;
 
-namespace WordPressXmlExportParser
+namespace WordPressXmlExportParser.Extractors
 {
     internal static class CategoryExtractor
     {
@@ -27,8 +27,8 @@ namespace WordPressXmlExportParser
             var parentCategoryElement = categoryElement.Element(parentCategoryElementName);
             var nameElement = categoryElement.Element(categorElementName);
 
-            return new Category 
-            { 
+            return new Category
+            {
                 Id = int.Parse(termIdElement.Value),
                 NiceName = niceNameElement.Value,
                 ParentCategoryName = parentCategoryElement.Value,
