@@ -5,9 +5,9 @@ using System.Text;
 
 namespace WordPressXmlExportParser
 {
-    public struct Page
+    public struct Post
     {
-        internal const string PostType = "page";
+        internal const string PostType = "post";
 
         public int Id { get; internal set; }
 
@@ -23,8 +23,14 @@ namespace WordPressXmlExportParser
 
         public Author Author { get; internal set; }
 
+        public ReadOnlyCollection<Category> Categories { get; internal set; } 
+
+        public ReadOnlyCollection<Tag> Tags { get; internal set; }
+
         public Attachment? FeaturedImage { get; internal set; }
 
-        public ReadOnlyCollection<PostMetaData> Metadata { get; internal set; }
+        public ReadOnlyCollection<Comment> Comments { get; internal set;  }
+
+        public ReadOnlyCollection<PostMetaData> MetaData { get; internal set; }
     }
 }

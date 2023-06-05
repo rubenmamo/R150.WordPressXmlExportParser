@@ -2,12 +2,12 @@
 {
 	public struct Category
     {
-		public int Id { get; set; }
+		public int Id { get; internal set; }
 
-		public string NiceName { get; set; }
+		public string NiceName { get; internal set; }
 
-		public string Name { get; set; }
+		public string Name { get; internal set; }
 
-		public string ParentCategoryName { get; set; }
+		public string ParentCategoryName { get; internal set; }
 	}
 }

@@ -54,6 +54,8 @@ namespace WordPressXmlExportParser.UnitTests
             blog.Categories.Count.Should().Be(2);
             blog.Tags.Count.Should().Be(2);
             blog.Attachments.Count.Should().Be(2);
+            blog.Pages.Count.Should().Be(2);
+            blog.Posts.Count.Should().Be(2);
         }
 
         private readonly string xml = @"<?xml version=""1.0"" encoding=""UTF-8"" ?>

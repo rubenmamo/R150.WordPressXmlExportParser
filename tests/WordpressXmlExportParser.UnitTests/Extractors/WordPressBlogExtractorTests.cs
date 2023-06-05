@@ -1,22 +1,24 @@
-﻿namespace WordPressXmlExportParser.UnitTests
+﻿using WordPressXmlExportParser.Extractors;
+
+namespace WordPressXmlExportParser.UnitTests.Extractors
 {
     [TestFixture]
     public class WordPressBlogExtractorTests
     {
-		[Test]
-		public void CorrectlyParsesTitle()
-		{
-			var blog = WordPressBlogExtractor.ExtractWordPressBlog(XElement.Parse(xml));
-
-			blog.Title.Should().Be("Some Blog");
-		}
-
-		[Test]
-		public void CorrectlyParsesLink()
+        [Test]
+        public void CorrectlyParsesTitle()
         {
             var blog = WordPressBlogExtractor.ExtractWordPressBlog(XElement.Parse(xml));
 
-			blog.Link.Should().Be(new Uri("https://wordpressxmlexportparser.local"));
+            blog.Title.Should().Be("Some Blog");
+        }
+
+        [Test]
+        public void CorrectlyParsesLink()
+        {
+            var blog = WordPressBlogExtractor.ExtractWordPressBlog(XElement.Parse(xml));
+
+            blog.Link.Should().Be(new Uri("https://wordpressxmlexportparser.local"));
         }
 
         [Test]
@@ -31,8 +33,8 @@
         public void CorrectlyParsesExportDate()
         {
             var blog = WordPressBlogExtractor.ExtractWordPressBlog(XElement.Parse(xml));
-            
-            blog.ExportDate.Should().Be(new DateTime(2023,5,30,7,22,20,DateTimeKind.Utc).ToLocalTime());
+
+            blog.ExportDate.Should().Be(new DateTime(2023, 5, 30, 7, 22, 20, DateTimeKind.Utc).ToLocalTime());
         }
 
         [Test]

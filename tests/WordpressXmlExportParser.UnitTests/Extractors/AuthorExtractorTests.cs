@@ -1,4 +1,6 @@
-﻿namespace WordPressXmlExportParser.UnitTests
+﻿using WordPressXmlExportParser.Extractors;
+
+namespace WordPressXmlExportParser.UnitTests.Extractors
 {
     internal class AuthorExtractorTests
     {
