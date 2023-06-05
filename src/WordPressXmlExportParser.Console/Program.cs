@@ -40,3 +40,11 @@ foreach (var tag in blog.Tags)
 {
     Console.WriteLine($"{tag.Name} [{tag.Slug}]");
 }
+
+Console.ReadKey();
+Console.WriteLine();
+Console.WriteLine("Attachments:");
+foreach (var attachment in blog.Attachments)
+{
+    Console.WriteLine($"{attachment.Title} [{attachment.AttachmentUri}]");
+}
