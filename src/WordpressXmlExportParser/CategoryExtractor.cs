@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Xml.Linq;
 
 namespace WordPressXmlExportParser
 {
     internal static class CategoryExtractor
     {
+        private static readonly XName categoryElementName = WordPressParser.WordPressXmlNamespace + "category";
         private static readonly XName idElementName = WordPressParser.WordPressXmlNamespace + "term_id";
         private static readonly XName niceNameElementName = WordPressParser.WordPressXmlNamespace + "category_nicename";
         private static readonly XName parentCategoryElementName = WordPressParser.WordPressXmlNamespace + "category_parent";
@@ -17,7 +15,7 @@ namespace WordPressXmlExportParser
         internal static ReadOnlyCollection<Category> ExtractCategories(XElement channelElement)
         {
             return new ReadOnlyCollection<Category>(channelElement
-                .Elements(WordPressParser.WordPressXmlNamespace + "category")
+                .Elements(categoryElementName)
                 .Select(ExtractCategory)
                 .ToList());
         }

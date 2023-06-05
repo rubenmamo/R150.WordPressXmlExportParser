@@ -9,6 +9,7 @@ namespace WordPressXmlExportParser
 {
     internal static class AuthorExtractor
     {
+        private static readonly XName authorTagName = WordPressParser.WordPressXmlNamespace + "author";
         private static readonly XName idElementName = WordPressParser.WordPressXmlNamespace + "author_id";
         private static readonly XName loginElementName = WordPressParser.WordPressXmlNamespace + "author_login";
         private static readonly XName emailElementName = WordPressParser.WordPressXmlNamespace + "author_email";
@@ -19,7 +20,7 @@ namespace WordPressXmlExportParser
         internal static ReadOnlyCollection<Author> ExtractAuthors(XElement channelElement)
         {
             return new ReadOnlyCollection<Author>(channelElement
-                .Elements(WordPressParser.WordPressXmlNamespace + "author")
+                .Elements(authorTagName)
                 .Select(ExtractAuthor)
                 .ToList());
         }
