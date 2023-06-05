@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace WordPressXmlExportParser
 {
-    internal class TagExtractor
+    internal static class TagExtractor
     {
         private static readonly XName tagElementName = WordPressParser.WordPressXmlNamespace + "tag";
         private static readonly XName idElementName = WordPressParser.WordPressXmlNamespace + "term_id";

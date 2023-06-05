@@ -47,7 +47,8 @@ namespace WordPressXmlExportParser.UnitTests
 
             blog.Should().BeNull();
         }
-        private void AssertFileBlogCorrect(WordPressBlog blog)
+
+        private static void AssertFileBlogCorrect(WordPressBlog blog)
         {
             blog.Authors.Count.Should().Be(2);
             blog.Categories.Count.Should().Be(2);
