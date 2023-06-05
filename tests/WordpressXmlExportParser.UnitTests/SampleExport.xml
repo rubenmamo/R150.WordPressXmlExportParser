@@ -15,5 +15,47 @@
     <wp:wxr_version>1.2</wp:wxr_version>
     <wp:base_site_url>https://wordpressxmlexportparser.local</wp:base_site_url>
     <wp:base_blog_url>https://wordpressxmlexportparser.local/blog</wp:base_blog_url>
+    <wp:author>
+      <wp:author_id>1</wp:author_id>
+      <wp:author_login>
+        <![CDATA[ruben_mamo]]>
+      </wp:author_login>
+      <wp:author_email><![CDATA[ruben@mamo.com]]></wp:author_email>
+      <wp:author_display_name><![CDATA[Ruben Mamo]]></wp:author_display_name>
+      <wp:author_first_name><![CDATA[Ruben]]></wp:author_first_name>
+      <wp:author_last_name><![CDATA[Mamo]]></wp:author_last_name>
+    </wp:author>
+    <wp:author>
+      <wp:author_id>2</wp:author_id>
+      <wp:author_login>
+        <![CDATA[someuser]]>
+      </wp:author_login>
+      <wp:author_email><![CDATA[some@user.com]]></wp:author_email>
+      <wp:author_display_name><![CDATA[Some User]]></wp:author_display_name>
+      <wp:author_first_name><![CDATA[Some]]></wp:author_first_name>
+      <wp:author_last_name><![CDATA[User]]></wp:author_last_name>
+    </wp:author>
+    <wp:category>
+      <wp:term_id>2</wp:term_id>
+      <wp:category_nicename><![CDATA[blogging]]></wp:category_nicename>
+      <wp:category_parent><![CDATA[rootCatgory]]></wp:category_parent>
+      <wp:cat_name><![CDATA[Blogging]]></wp:cat_name>
+    </wp:category>
+    <wp:category>
+      <wp:term_id>5</wp:term_id>
+      <wp:category_nicename><![CDATA[how-tos]]></wp:category_nicename>
+      <wp:category_parent><![CDATA[]]></wp:category_parent>
+      <wp:cat_name><![CDATA[How to's]]></wp:cat_name>
+    </wp:category>
+    <wp:tag>
+      <wp:term_id>17</wp:term_id>
+      <wp:tag_slug><![CDATA[net-core]]></wp:tag_slug>
+      <wp:tag_name><![CDATA[.NET Core]]></wp:tag_name>
+    </wp:tag>
+    <wp:tag>
+      <wp:term_id>33</wp:term_id>
+      <wp:tag_slug><![CDATA[android]]></wp:tag_slug>
+      <wp:tag_name><![CDATA[Android]]></wp:tag_name>
+    </wp:tag>
   </channel>
 </rss>

@@ -21,7 +21,9 @@ namespace WordPressXmlExportParser.UnitTests
             var blog = WordPressParser.ReadFile(fileName);
             
             blog.Should().NotBeNull();
+            AssertFileBlogCorrect(blog);
         }
+
 
         [Test]
         public async Task ParsesFileAsync()
@@ -31,6 +33,7 @@ namespace WordPressXmlExportParser.UnitTests
             var blog = await WordPressParser.ReadFileAsync(fileName);
 
             blog.Should().NotBeNull();
+            AssertFileBlogCorrect(blog);
         }
 
         [Test]
@@ -43,6 +46,12 @@ namespace WordPressXmlExportParser.UnitTests
             var blog = await WordPressParser.ReadFileAsync(fileName, cancellationTokenSource.Token);
 
             blog.Should().BeNull();
+        }
+        private void AssertFileBlogCorrect(WordPressBlog blog)
+        {
+            blog.Authors.Count.Should().Be(2);
+            blog.Categories.Count.Should().Be(2);
+            blog.Tags.Count.Should().Be(2);
         }
 
         private string xml = @"<?xml version=""1.0"" encoding=""UTF-8"" ?>
