@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Runtime.InteropServices.ComTypes;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -49,6 +51,7 @@ namespace WordPressXmlExportParser
 
             var result = WordPressBlogExtractor.ExtractWordPressBlog(channelElement);
             result.Categories = CategoryExtractor.ExtractCategories(channelElement);
+            result.Authors = AuthorExtractor.ExtractAuthors(channelElement);
 
             return result;
         }

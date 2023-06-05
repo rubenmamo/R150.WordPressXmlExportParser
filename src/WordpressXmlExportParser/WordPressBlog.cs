@@ -23,5 +23,7 @@ namespace WordPressXmlExportParser
         public Uri BaseBlogUri { get; internal set; }
 
         public ReadOnlyCollection<Category> Categories { get; internal set; } = new ReadOnlyCollection<Category>(new List<Category>());
+
+        public ReadOnlyCollection<Author> Authors { get; internal set; } = new ReadOnlyCollection<Author>(new List<Author>());
     }
 }
