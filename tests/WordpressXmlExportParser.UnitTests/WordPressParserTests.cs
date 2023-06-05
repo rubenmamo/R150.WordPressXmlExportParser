@@ -33,6 +33,18 @@ namespace WordPressXmlExportParser.UnitTests
             blog.Should().NotBeNull();
         }
 
+        [Test]
+        public async Task ReturnsNullIfCancellationRequested()
+        {
+            var fileName = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\SampleExport.xml";
+            var cancellationTokenSource = new CancellationTokenSource();
+            cancellationTokenSource.Cancel();
+
+            var blog = await WordPressParser.ReadFileAsync(fileName, cancellationTokenSource.Token);
+
+            blog.Should().BeNull();
+        }
+
         private string xml = @"<?xml version=""1.0"" encoding=""UTF-8"" ?>
 <rss
 	xmlns:excerpt=""http://wordpress.org/export/1.2/excerpt/""
