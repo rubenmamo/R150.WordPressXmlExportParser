@@ -67,6 +67,14 @@
             blog.BaseBlogUri.Should().Be(new Uri("https://wordpressxmlexportparser.local/blog"));
         }
 
+        [Test]
+        public void CorrectlyParsesGenerator()
+        {
+            var blog = WordPressBlogExtractor.ExtractWordPressBlog(XElement.Parse(xml));
+
+            blog.Generator.Should().Be(new Uri("https://wordpress.org/?v=5.9.5"));
+        }
+
         private string xml = @"<?xml version=""1.0"" encoding=""UTF-8"" ?>
 <channel
 	xmlns:excerpt=""http://wordpress.org/export/1.2/excerpt/""
@@ -83,6 +91,7 @@
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://wordpressxmlexportparser.local</wp:base_site_url>
 	<wp:base_blog_url>https://wordpressxmlexportparser.local/blog</wp:base_blog_url>
+	<generator>https://wordpress.org/?v=5.9.5</generator>
 </channel>";
     }
 }
