@@ -30,7 +30,7 @@ namespace WordPressXmlExportParser.Extractors
             return new Category
             {
                 Id = int.Parse(termIdElement.Value),
-                NiceName = niceNameElement.Value,
+                Slug = niceNameElement.Value,
                 ParentCategoryName = parentCategoryElement.Value,
                 Name = nameElement.Value
             };
