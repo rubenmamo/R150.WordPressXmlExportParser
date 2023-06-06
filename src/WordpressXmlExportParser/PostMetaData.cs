@@ -6,8 +6,8 @@ namespace WordPressXmlExportParser
 {
     public struct PostMetaData
     {
-        public string Key { get; set; }
+        public string Key { get; internal set; }
 
-        public string Value { get; set; }
+        public string Value { get; internal set; }
     }
 }

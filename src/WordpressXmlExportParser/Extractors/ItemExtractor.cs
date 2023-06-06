@@ -186,7 +186,7 @@ namespace WordPressXmlExportParser.Extractors
                 if (categoryElement.Attribute("domain").Value == "category")
                 {
                     var niceNameElement = categoryElement.Attribute("nicename");
-                    result.Add(blog.Categories.SingleOrDefault(x => x.NiceName == niceNameElement.Value));
+                    result.Add(blog.Categories.SingleOrDefault(x => x.Slug == niceNameElement.Value));
 
                 }
             }
