@@ -2,39 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
-  
-  <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <IncludeSymbols Condition="'$(GITHUB_ACTIONS)' == 'true'">true</IncludeSymbols>
+    <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-  </PropertyGroup>
-  
-  <PropertyGroup>
     <Deterministic>true</Deterministic>
-    <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">True</ContinuousIntegrationBuild>
-  </PropertyGroup>
-  
-  <PropertyGroup>
+    <ContinuousIntegrationBuild>True</ContinuousIntegrationBuild>
     <Authors>Ruben Mamo</Authors>
     <Description>A WordPress XML Export File Parser</Description>
-
     <PackageProjectUrl>https://github.com/rubenmamo/WordPressXmlExportParser/</PackageProjectUrl>
-
     <PackageTags>wordpress, library</PackageTags>
-    <DebugType Condition="'$(GITHUB_ACTIONS)' == 'true'">full</DebugType>
-  </PropertyGroup>
-  
-  <PropertyGroup>
+    <DebugType>full</DebugType>
     <PackageLicenseExpression>LGPL-3.0-only</PackageLicenseExpression>
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.*" PrivateAssets="All"/>
-  </ItemGroup>
-  
-  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
     <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
