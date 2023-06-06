@@ -29,3 +29,20 @@ template: |
   ## Changes
 
   $CHANGES
+autolabeler:
+  - label: 'bug'
+    title:
+      - '/fix!{0,1}: /i'
+  - label: 'feature'
+    title:
+      - '/feat!{0,1}: /i'
+  - label: 'chore'
+    title:
+      - '/build!{0,1}: /i'
+      - '/chore!{0,1}: /i'
+      - '/ci!{0,1}: /i'
+      - '/docs!{0,1}: /i'
+      - '/style!{0,1}: /i'
+      - '/refactor!{0,1}: /i'
+      - '/perf!{0,1}: /i'
+      - '/test!{0,1}: /i'
