@@ -10,6 +10,9 @@ permissions:
   checks: write
   pull-requests: write
   
+env:
+  NuGetDirectory: ${{ github.workspace}}/nuget
+  
 jobs:
   build:
     name: Build and analyze
@@ -57,7 +60,15 @@ jobs:
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
           
       - name: Pack NuGet Package
-        run: dotnet pack --configuration Release
+        run: |
+            cd src\WordPressXmlExportParser
+            dotnet pack --configuration Release --output ${{ env.NuGetDirectory }}
+      - uses: actions/upload-artifact@v3
+        with:
+            name: nuget
+            if-no-files-found: error
+            retention-days: 7
+            path: ${{ env.NuGetDirectory }}/*.nupkg
         
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action/composite@v2
