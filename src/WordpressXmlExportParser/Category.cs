@@ -4,7 +4,7 @@
     {
 		public int Id { get; internal set; }
 
-		public string NiceName { get; internal set; }
+		public string Slug { get; internal set; }
 
 		public string Name { get; internal set; }
 

@@ -30,7 +30,7 @@ Console.WriteLine();
 Console.WriteLine("Categories:");
 foreach (var category in blog.Categories)
 {
-    Console.WriteLine($"{category.Name} [{category.NiceName}]");
+    Console.WriteLine($"{category.Name} [{category.Slug}]");
 }
 
 Console.ReadKey();

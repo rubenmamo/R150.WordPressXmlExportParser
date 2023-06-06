@@ -27,8 +27,8 @@ namespace WordPressXmlExportParser.UnitTests.Extractors
         {
             var categories = CategoryExtractor.ExtractCategories(XElement.Parse(xml));
 
-            categories[0].NiceName.Should().Be("blogging");
-            categories[1].NiceName.Should().Be("how-tos");
+            categories[0].Slug.Should().Be("blogging");
+            categories[1].Slug.Should().Be("how-tos");
         }
 
         [Test]
