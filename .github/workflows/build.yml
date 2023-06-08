@@ -40,6 +40,8 @@ jobs:
       - name: Determine Version
         id:   gitversion
         uses: gittools/actions/gitversion/execute@v0.10.2
+        with:
+            additionalArguments: /updateprojectfiles
         
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
@@ -69,7 +71,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"rubenmamo_WordpressXmlExportParser" /o:"rubenmamo" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"rubenmamo_WordpressXmlExportParser" /o:"rubenmamo" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml /d:sonar.projectVersion=${{ steps.gitversion.outputs.FullSemVer }}
           dotnet build --no-incremental
           dotnet-coverage collect -f xml -o coverage.xml dotnet test --logger trx
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
@@ -78,6 +80,7 @@ jobs:
         run: |
             cd src\R150.WordPressXmlExportParser
             dotnet pack --configuration Release --output ${{ env.NuGetDirectory }}
+            
       - uses: actions/upload-artifact@v3
         with:
             name: nuget
