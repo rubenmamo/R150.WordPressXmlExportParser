@@ -76,7 +76,7 @@ jobs:
           
       - name: Pack NuGet Package
         run: |
-            cd src\WordPressXmlExportParser
+            cd src\R150.WordPressXmlExportParser
             dotnet pack --configuration Release --output ${{ env.NuGetDirectory }}
       - uses: actions/upload-artifact@v3
         with:
